@@ -1,0 +1,77 @@
+<svg host="65bd71144e" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="371px" height="114px" viewBox="-0.5 -0.5 371 114" content="&lt;mxfile&gt;&lt;diagram id=&quot;9JU439s2dURd9Ifp_mi3&quot; name=&quot;Page-1&quot;&gt;7VfbbtswDP0aA9tDi9hO0vYxcboL0AJFs2Hbo2ozsVBZNGSlSfr1oyz5nrRZd3kaYATmEUWJPEcW44VRtvuoWJ7eYgLCC0bJzgsXXhCE4QX9GmBvgfEotMBa8cRCfgMs+TM4cOTQDU+g6DhqRKF53gVjlBJi3cGYUrjtuq1QdFfN2RoGwDJmYoh+44lOLXoZXDT4J+DrtFrZn17ZkYxVzi6TImUJbltQeO2FkULU9i3bRSBM7aq62HkfjozWG1Mg9SkTAjvhiYmNy23J5VqARuk2qPdV1sWWZ4JJsuYrlHrpRnyymeBrSe8xLQuKgCdQmlPBZm5AY05onHKR3LA9bszmCs3ix8qap6j4M4VlwsWkYaUd98G047E0MwkeEaqgIJ+7KmO/B92yXcfxhhXaATEKwfKCP9RpZEytuZyj1pg5J1cfSgd2R2vs18yR4gEz0GpPLrXcHdlO7cHU2dtGO36FpR3dOJA5va7r2PVy96RvZhj7tfWuDixHRe6sxgRxKZmGOW5kUrR1RC+tTBuoVNdhpYUDpZ2ZUUk0y5iQmRcF3mx0XH5EgC5lofARIhRIOltItHrkQvSgSpICVvqoIIucxbTgTemzGDfIvSuLgZDmrkR5SlOeJCCNmFAzzaxyjExy5FKXdZvM6aHqRqPziTehjUdk+41Nj3FXOkLKXTFeighIllsw0jxNccFhxe27TL4msD7jbX11qH6B1/GA1wFzgpeMWOaqD6b/JtoyIkBAw9MXQ+PizB9wGQ65DA/wJtgDiDssuOZo4ivr2+PzH1A2CU6j7PL3GZscPIn1wXv33jO6CH37+Zub+xb0Z3dQaTSctQ5py/P/eX0r+adeCJMX7oNT2Z8O2I8EN/vs85fqrLqK/8Al6Ae9S+nqQM7+X8r5YpDz1wIGCYNMZqY5JAvzUjWEuAbEp9TmCStSSFxNWuWBHdffW+8/jMhIPdZaVA1Iaew7fQUkg0azV1DaIW5UDC3yhjU+pBsFgmn+1A3/QiNxZ05Ewxf15B2+Qn98PukGsRtz89o9Zi9Uvx8J/V4gavToCzMI9HqTQWbTKlv35v9GeP0T&lt;/diagram&gt;&lt;/mxfile&gt;">
+    <defs>
+        <clipPath id="mx-clip-214-31-152-26-0">
+            <rect x="214" y="31" width="152" height="26"/>
+        </clipPath>
+        <clipPath id="mx-clip-214-65-152-50-0">
+            <rect x="214" y="65" width="152" height="50"/>
+        </clipPath>
+    </defs>
+    <g>
+        <path d="M 210 26 L 210 0 L 370 0 L 370 26" fill="#ffffff" stroke="#000000" stroke-miterlimit="10" pointer-events="all"/>
+        <path d="M 210 26 L 210 110 L 370 110 L 370 26" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 210 26 L 370 26" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/>
+        <g fill="#000000" font-family="Helvetica" font-weight="bold" pointer-events="none" text-anchor="middle" font-size="12px">
+            <text x="289.5" y="17.5">
+                Singleton
+            </text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" pointer-events="none" clip-path="url(#mx-clip-214-31-152-26-0)" font-size="12px">
+            <text x="215.5" y="43.5">
+                - instance: Singleton
+            </text>
+        </g>
+        <path d="M 210 56 L 370 56" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/>
+        <g fill="#000000" font-family="Helvetica" pointer-events="none" clip-path="url(#mx-clip-214-65-152-50-0)" font-size="12px">
+            <text x="215.5" y="77.5">
+                - Singleton()
+            </text>
+            <text x="215.5" y="91.5">
+                + getInstance():Singleton
+            </text>
+        </g>
+        <rect x="0" y="30" width="110" height="50" fill="#ffffff" stroke="#000000" pointer-events="none"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 55px; margin-left: 55px;">
+                        <div style="box-sizing: border-box; font-size: 0; text-align: center; ">
+                            <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: none; white-space: nowrap; ">
+                                Client
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="55" y="59" fill="#000000" font-family="Helvetica" font-size="12px" text-anchor="middle">
+                    Client
+                </text>
+            </switch>
+        </g>
+        <path d="M 110 55 L 207.76 55" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="none"/>
+        <path d="M 195.88 61.5 L 208.88 55 L 195.88 48.5" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 55px; margin-left: 160px;">
+                        <div style="box-sizing: border-box; font-size: 0; text-align: center; ">
+                            <div style="display: inline-block; font-size: 11px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: none; background-color: #ffffff; white-space: nowrap; ">
+                                Use
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="160" y="58" fill="#000000" font-family="Helvetica" font-size="11px" text-anchor="middle">
+                    Use
+                </text>
+            </switch>
+        </g>
+    </g>
+    <switch>
+        <g requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"/>
+        <a transform="translate(0,-5)" xlink:href="https://www.diagrams.net/doc/faq/svg-export-text-problems" target="_blank">
+            <text text-anchor="middle" font-size="10px" x="50%" y="100%">
+                Viewer does not support full SVG 1.1
+            </text>
+        </a>
+    </switch>
+</svg>

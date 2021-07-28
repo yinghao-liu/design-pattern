@@ -1,7 +1,7 @@
 # 005
 Singleton Pattern
 
-![A](singleton.drawio.png)
+![A](singleton.drawio.svg)
 
 
 
