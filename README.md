@@ -52,7 +52,7 @@
 
 ### 020 [状态模式(State Pattern)]()
 
-### 021 [策略模式(Strategy Pattern)](021)
+### 021 [策略模式(Strategy Pattern)](021)√
 
 ### 022 [模板模式(Template Pattern)]()
 
