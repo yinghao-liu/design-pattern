@@ -4,9 +4,9 @@
 
 创建型模式提供了创建对象的机制， 能够提升已有代码的灵活性和可复用性。
 
-### 001 [工厂方法(Factory Method)](001)
+### 001 [工厂方法模式(Factory Method Pattern)](001)
 
-### 002 [抽象工厂(Abstract Factory)](002)
+### 002 [抽象工厂模式(Abstract Factory Pattern)](002)
 
 ### 003 [生成器模式(Builder Pattern)](003)
 

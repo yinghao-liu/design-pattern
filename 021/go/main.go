@@ -11,6 +11,8 @@ func PaymentInit() {
 	// 初始化
 	PaymentSingle.Init()
 	// 此处可以动态添加
+	// TODO 使用工厂模式创建类
+
 	PaymentSingle.SetPayment(strategy.PayAlipay, new(strategy.AlipayPayment))
 	PaymentSingle.SetPayment(strategy.PayWechat, new(strategy.WechatPayment))
 	PaymentSingle.SetPayment(strategy.PayBankCard, new(strategy.BankCardPayment))
