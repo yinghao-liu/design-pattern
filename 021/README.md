@@ -80,5 +80,5 @@ go实例中省略了Context，直接使用interface代替，现实场景中，Co
 2. [策略模式](https://refactoringguru.cn/design-patterns/strategy)
 3. [UML类图](https://zhuanlan.zhihu.com/p/109655171)
 
-[模块自注册]:../../../../go/tree/main/501
+[模块自注册]:../../../../go/tree/master/501
 [工厂方法]:../001
