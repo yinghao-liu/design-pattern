@@ -12,7 +12,7 @@
 
 ### 004 [原型模式(Prototype Pattern)](004)
 
-### 005 [单例模式(Singleton Pattern)](005)
+### 005 [单例模式(Singleton Pattern)](005)√
 
 ## 结构型模式(Structural Patterns)
 

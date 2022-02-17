@@ -26,7 +26,7 @@ func main() {
 
 ## Simple Factory
 
-有了简单的工厂，我知道能坐（有sit方法）的就是椅子
+我已知能坐（有sit方法）的就是椅子
 
 ```go
 // abstract product
@@ -58,7 +58,7 @@ func main() {
 }
 ```
 
-类图
+简单工厂类图
 
 ![simpleFactory](simpleFactory.drawio.png)
 
@@ -68,15 +68,9 @@ func main() {
 
 ## Factory Method
 
-将简单工厂的工厂使用策略模式实现，就变成了工厂方法。
+将简单工厂的工厂使用策略模式实现，就变成了工厂方法模式。
 
 
-
-闭包和工厂模式
-
-包的可见性和工厂模式
-
-工厂方法(Factory Method)
 
 
 
@@ -92,6 +86,8 @@ func main() {
 
 ## reference
 
-- [工厂方法](http://c.biancheng.net/view/1348.html)
-- [工厂方法](https://refactoringguru.cn/design-patterns/factory-method)
+1. [简单工厂模式](http://c.biancheng.net/view/8385.html)
+2. [工厂方法1](http://c.biancheng.net/view/1348.html)
+3. [工厂方法2](https://refactoringguru.cn/design-patterns/factory-method)
+4. [UML类图](https://zhuanlan.zhihu.com/p/109655171)
 

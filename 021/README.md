@@ -50,10 +50,35 @@ if (payType == 微信支付) {
 
 
 
-go实例中省略了Context，直接使用interface代替
+只需要在初始化的时候，将支持的策略配置好，就可以在各处使用了。
+
+```go
+var PaymentSingle strategy.Payment
+
+func PaymentInit() {
+	// 初始化
+	PaymentSingle.Init()
+	PaymentSingle.SetPayment(strategy.PayAlipay, new(strategy.AlipayPayment))
+	PaymentSingle.SetPayment(strategy.PayWechat, new(strategy.WechatPayment))
+	PaymentSingle.SetPayment(strategy.PayBankCard, new(strategy.BankCardPayment))
+}
+```
+
+如果需要主程序不感知策略，或策略支持二次开发，（支持已实现的全部），那就需要用到[模块自注册][]功能了
+
+如果需要通过配置文件动态的获取支持的策略，（支持已实现的部分），需要用到[工厂方法][]模式和[模块自注册][]功能
+
+
+
+go实例中省略了Context，直接使用interface代替，现实场景中，Context里的`doSomething()`可以包含提取的一些通用操作，只在有差异处执行`execute(data)`
+
+
 
 ## reference
 
 1. [策略模式详解](https://zhuanlan.zhihu.com/p/346607652)
 2. [策略模式](https://refactoringguru.cn/design-patterns/strategy)
 3. [UML类图](https://zhuanlan.zhihu.com/p/109655171)
+
+[模块自注册]:../../../../go/501
+[工厂方法]:../001
