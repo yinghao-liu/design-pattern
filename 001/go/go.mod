@@ -1,3 +1,3 @@
-module factorypattern1
+module factorypattern
 
 go 1.16

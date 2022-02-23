@@ -1,43 +1,33 @@
 package main
 
-import "fmt"
+import (
+	"factorypattern/factorymethod"
+	"factorypattern/simplefactory"
+	"fmt"
+)
 
-// abstract product
-type Chair interface {
-	sit()
+// simple factory client
+func simple(scheme string) {
+	a := simplefactory.ChairFactory(scheme)
+	a.Sit()
 }
 
-// concrete product
-type ChairRed struct {
-}
-
-func (c ChairRed) sit() {
-	fmt.Printf("sit in ChairRed\n")
-}
-
-// concrete product
-type ChairBlue struct {
-}
-
-func (c ChairBlue) sit() {
-	fmt.Printf("sit in ChairBlue\n")
-}
-
-// concrete factory
-func ChairFactory(style string) Chair {
-	switch style {
-	case "blue":
-		return new(ChairBlue)
-	case "red":
-		return new(ChairRed)
+// factory method client
+func method(scheme string) {
+	factory, err := factorymethod.Factory.Get(scheme)
+	if nil != err {
+		fmt.Printf("err is %s\n", err.Error())
 	}
+	product := factory.CreateProduct()
+	product.DoAC()
 
-	return nil
 }
 
 // client
 func main() {
+	// simple factory
+	simple("blue")
+	// factory method
+	method(factorymethod.ACG1)
 
-	a := ChairFactory("blue")
-	a.sit()
 }
