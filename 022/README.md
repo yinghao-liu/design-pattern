@@ -12,3 +12,8 @@ Template Pattern
 
 ![](templatepattern.drawio.png)
 
+对于没有继承的语言来说，实现起来有些复杂了
+
+
+
+![](templatepatterninterface.drawio.png)
