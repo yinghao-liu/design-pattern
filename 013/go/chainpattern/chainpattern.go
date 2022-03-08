@@ -2,12 +2,7 @@ package chainpattern
 
 import "fmt"
 
-/************ abstract Handler *******************/
-type Handler interface {
-	Handle() error
-}
-
-/************ HandleChain *******************/
+/************ HandleChain - context *******************/
 type HandleChain struct {
 	list []Handler
 }
@@ -20,6 +15,11 @@ func (h HandleChain) Handle() {
 }
 func (h *HandleChain) AddHandler(hd Handler) {
 	h.list = append(h.list, hd)
+}
+
+/************ abstract Handler *******************/
+type Handler interface {
+	Handle() error
 }
 
 /************ concrete  Handle *******************/

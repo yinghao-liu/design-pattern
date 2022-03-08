@@ -48,12 +48,12 @@
 
 ### 018 [备忘录模式(Memento Pattern)]()
 
-### 019 [观察者模式(Observer Pattern)](019)√
+### 019 [观察者模式(Observer Pattern)](019)★☆☆
 
-### 020 [状态模式(State Pattern)](020)√
+### 020 [状态模式(State Pattern)](020)★☆☆
 
 ### 021 [策略模式(Strategy Pattern)](021)★★★
 
 ### 022 [模板模式(Template Pattern)](022)★☆☆
 
-### 023 [访问者模式(Visitor Pattern)]()
+### 023 [访问者模式(Visitor Pattern)](023)
