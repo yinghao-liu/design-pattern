@@ -12,14 +12,16 @@ const (
 	PayBankCard = "BankCard"
 )
 
-// 支付接口
+/****************************支付的接口**********************************/
 type Paymenter interface {
 	PayType() string
 	Pay() error
 	CheckBalance() (float32, error)
 }
 
-// TODO 单例模式实现
+/****************************支付的管理context**********************************/
+// 扩展了UML图中context的功能，可添加Pay()方法，实现具体Pay操作前后的通用操作
+// TODO 单例模式实现 -> 不用单例也行,可维护多个context,但每个都需要独立初始化
 type Payment struct {
 	payment map[string]Paymenter
 }
@@ -39,6 +41,7 @@ func (p *Payment) GetPayment(payType string) (Paymenter, error) {
 	return nil, errors.New("not exist")
 }
 
+/****************************支付的具体实现**********************************/
 // 支付宝支付 - 可单独拆分文件实现
 type AlipayPayment struct {
 }
