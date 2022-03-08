@@ -8,9 +8,9 @@ Chain of Responsibility Pattern
 
 
 
+另一种责任链结构
 
-
-
+![image-20220308152302134](image/image-20220308152302134.png)
 
 ## reference
 
