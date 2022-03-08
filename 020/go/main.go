@@ -1,8 +1,17 @@
 package main
 
-import "statepattern1/state"
+import (
+	"fmt"
+	"statepattern1/state"
+)
 
 func main() {
 	var context state.OrderContext
-	context.ChangeState(new(state.ToBePaid))
+	initState := new(state.ToBePaid)
+	initState.SetContext(&context)
+
+	context.ChangeState(initState)
+
+	done := <-state.StateChan
+	fmt.Printf("done:%v\n", done)
 }

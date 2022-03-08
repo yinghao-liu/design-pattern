@@ -1,6 +1,7 @@
 package state
 
 import (
+	"errors"
 	"fmt"
 	"time"
 )
@@ -18,6 +19,8 @@ const (
 	OperationCancel = "cancel"
 )
 
+var StateChan = make(chan bool)
+
 /*******************context************************/
 type OrderContext struct {
 	state OrderStater
@@ -25,83 +28,135 @@ type OrderContext struct {
 
 func (o *OrderContext) ChangeState(state OrderStater) {
 	o.state = state
-	o.state.Flow()
+	go o.state.Flow()
 }
-func (o *OrderContext) Pay(state OrderStater) {
-	o.state = state
-	o.state.Handle()
+func (o *OrderContext) Handle(op string) error {
+	ops := o.state.GetOperations()
+	for _, j := range ops {
+		if op == j {
+			o.state.Handle(op)
+			return nil
+		}
+	}
+	return errors.New("not support operation")
 }
 
-/**********************state***************************/
+/**********************state 接口***************************/
 // abstract state
 type OrderStater interface {
 	Flow()
 	Handle(op string)
-	Operations() []string
+	GetOperations() []string
 }
 
-// concrete state ToBePaid
+/**********************state 具体实现***************************/
+type OrderContextBase struct {
+	order *OrderContext
+}
+
+func (b *OrderContextBase) SetContext(order *OrderContext) {
+	b.order = order
+}
+
+// ToBePaid
 type ToBePaid struct {
-	order   OrderContext
+	OrderContextBase
+
 	myTimer *time.Timer
 }
 
 func (s ToBePaid) Flow() {
+	fmt.Printf("Flowing ToBePaid\n")
 	s.myTimer = time.NewTimer(time.Second * 5)
 	select {
 	case a := <-s.myTimer.C:
-		fmt.Printf("time is up %+v\n", a)
+		fmt.Printf("ToBePaid: time is up %+v\n", a)
+		s.Handle(OperationCancel)
 	}
-
 	s.myTimer.Stop()
-
 }
-func (s ToBePaid) Operations() []string {
+func (s ToBePaid) GetOperations() []string {
 	return []string{OperationPay, OperationCancel}
 }
 func (s ToBePaid) Handle(op string) {
 	switch op {
 	case OperationPay:
 		s.myTimer.Stop()
+
+	case OperationCancel:
+		s.myTimer.Stop()
+		next := new(Canceling)
+		next.SetContext(s.order)
+		s.order.ChangeState(next)
 	}
 }
 
-// concrete state ToBeReceived
+// ToBeReceived
 type ToBeReceived struct {
+	OrderContextBase
 }
 
 func (s ToBeReceived) Handle() {
 
 }
+func (s ToBeReceived) Flow() {
+	fmt.Printf("Flowing ToBeReceived\n")
+}
+func (s ToBeReceived) GetOperations() []string {
+	return []string{OperationPay, OperationCancel}
+}
 
-// concrete state Done
+// Done
 type Done struct {
+	OrderContextBase
 }
 
-func (s Done) Handle() {
+func (s Done) Flow() {
+	fmt.Printf("Flowing Done\n")
+	StateChan <- true
+}
+func (s Done) GetOperations() []string {
+	return []string{OperationPay, OperationCancel}
+}
+
+func (s Done) Handle(op string) {
 
 }
 
-// concrete state CancelRequest
-type CancelRequest struct {
-}
-
-func (s CancelRequest) Handle() {
-
-}
-
-// concrete state Canceling
+// Canceling
 type Canceling struct {
+	OrderContextBase
 }
 
-func (s Canceling) Handle() {
+func (s Canceling) Flow() {
+	fmt.Printf("Flowing Canceling\n")
+
+	time.Sleep(time.Second * 2)
+
+	next := new(Canceled)
+	next.SetContext(s.order)
+	s.order.ChangeState(next)
+
+}
+func (s Canceling) GetOperations() []string {
+	return []string{OperationPay, OperationCancel}
+}
+func (s Canceling) Handle(op string) {
 
 }
 
-// concrete state Canceled
+// Canceled
 type Canceled struct {
+	OrderContextBase
 }
 
-func (s Canceled) Handle() {
+func (s Canceled) Flow() {
+	fmt.Printf("Flowing Canceled\n")
+	StateChan <- true
+}
+func (s Canceled) GetOperations() []string {
+	return []string{OperationPay, OperationCancel}
+}
+func (s Canceled) Handle(op string) {
 
 }
