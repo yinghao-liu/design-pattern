@@ -18,9 +18,9 @@
 
 结构型模式介绍如何将对象和类组装成较大的结构， 并同时保持结构的灵活和高效。
 
-### 006 [适配器模式(Adapter Pattern)](006)√
+### 006 [适配器模式(Adapter Pattern)](006)★☆☆
 
-### 007 [桥接模式(Bridge Pattern)](007)√
+### 007 [桥接模式(Bridge Pattern)](007)★☆☆
 
 ### 008 [组合模式(Composite Pattern)]()
 
@@ -28,7 +28,7 @@
 
 ### 010 [外观模式(Facade Pattern)]()
 
-### 011 [享元模式(Flyweight Pattern)]()
+### 011 [享元模式(Flyweight Pattern)](011)★★☆
 
 ### 012 [代理模式(Proxy Pattern)]()
 

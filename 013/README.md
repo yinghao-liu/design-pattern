@@ -6,7 +6,7 @@ Chain of Responsibility Pattern
 
 
 
-使用了Context类维护不同的责任链，比如A链可以由`1->2->3`组成，B链可以由`1->3`组成。
+使用Context类可以创建不同的责任链，比如A链可以由`1->2->3`组成，B链可以由`1->3`组成。
 
 ![](chainpatter.drawio.png)
 
