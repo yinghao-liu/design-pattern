@@ -38,7 +38,7 @@
 
 ### 013 [责任链模式(Chain of Responsibility Pattern)](013)★★★
 
-### 014 [命令模式(Command Pattern)]()
+### 014 [命令模式(Command Pattern)](014)★★★
 
 ### 015 [解释器模式(Interpreter Pattern)]()
 
@@ -46,7 +46,7 @@
 
 ### 017 [中介者模式(Mediator Pattern)]()
 
-### 018 [备忘录模式(Memento Pattern)]()
+### 018 [备忘录模式(Memento Pattern)](018)★★☆
 
 ### 019 [观察者模式(Observer Pattern)](019)★☆☆
 
