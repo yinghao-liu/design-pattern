@@ -7,9 +7,9 @@ import (
 
 // 支付类型
 const (
-	PayAlipay   = "Alipay"
-	PayWechat   = "Wechat"
-	PayBankCard = "BankCard"
+	PayAlipay   = "Alipay"   // 若拆分文件，和Alipay的实现放在一起
+	PayWechat   = "Wechat"   // 若拆分文件，和Wechat的实现放在一起
+	PayBankCard = "BankCard" // 若拆分文件，和BankCard的实现放在一起
 )
 
 /****************************支付的接口**********************************/
@@ -17,6 +17,17 @@ type Paymenter interface {
 	PayType() string
 	Pay() error
 	CheckBalance() (float32, error)
+}
+
+/****************************支付的默认操作**********************************/
+type PaymentDefault struct {
+}
+
+func (p PaymentDefault) Pay() error {
+	return errors.New("not support Pay")
+}
+func (p PaymentDefault) CheckBalance() (float32, error) {
+	return float32(0), errors.New("not support CheckBalance")
 }
 
 /****************************支付的管理context**********************************/
@@ -44,6 +55,7 @@ func (p *Payment) GetPayment(payType string) (Paymenter, error) {
 /****************************支付的具体实现**********************************/
 // 支付宝支付 - 可单独拆分文件实现
 type AlipayPayment struct {
+	PaymentDefault // 默认都不支持
 }
 
 func (p *AlipayPayment) PayType() string {
@@ -61,6 +73,7 @@ func (p *AlipayPayment) CheckBalance() (float32, error) {
 
 // 微信支付 - 可单独拆分文件实现
 type WechatPayment struct {
+	PaymentDefault // 默认都不支持
 }
 
 func (p *WechatPayment) PayType() string {
@@ -78,6 +91,7 @@ func (p *WechatPayment) CheckBalance() (float32, error) {
 
 // 银行卡支付 - 可单独拆分文件实现
 type BankCardPayment struct {
+	PaymentDefault // 默认都不支持
 }
 
 func (p *BankCardPayment) PayType() string {
@@ -87,7 +101,4 @@ func (p *BankCardPayment) PayType() string {
 func (p *BankCardPayment) Pay() error {
 	fmt.Printf("BankCardPayment doing pay\n")
 	return nil
-}
-func (p *BankCardPayment) CheckBalance() (float32, error) {
-	return float32(0), errors.New("not support CheckBalance")
 }
