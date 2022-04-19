@@ -2,6 +2,18 @@
 观察者模式（Observer Pattern）
 回调、注册和反注册
 
+![Observer1](image/observe.drawio.png)
 
 
-![image-20220224143250763](image/image-20220224143250763.png)
+
+
+
+
+
+![Observer2](image/Observer2.png)
+
+
+
+## reference
+
+1. [观察者模式](https://refactoringguru.cn/design-patterns/observer)
