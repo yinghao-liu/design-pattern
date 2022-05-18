@@ -22,7 +22,7 @@
 
 ### 007 [桥接模式(Bridge Pattern)](007)★☆☆
 
-### 008 [组合模式(Composite Pattern)]()
+### 008 [组合模式(Composite Pattern)](008)★★☆
 
 ### 009 [装饰器模式(Decorator Pattern)](009)★☆☆
 
