@@ -26,11 +26,11 @@
 
 ### 009 [装饰器模式(Decorator Pattern)](009)★☆☆
 
-### 010 [外观模式(Facade Pattern)]()
+### 010 [外观模式(Facade Pattern)](010)★☆☆
 
 ### 011 [享元模式(Flyweight Pattern)](011)★★☆
 
-### 012 [代理模式(Proxy Pattern)]()
+### 012 [代理模式(Proxy Pattern)](012)★☆☆
 
 ## 行为型模式(Behavioral Patterns)
 
