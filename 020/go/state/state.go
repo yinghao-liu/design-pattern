@@ -19,7 +19,7 @@ const (
 	OperationCancel = "cancel"
 )
 
-var StateChan = make(chan bool)
+var StateChan = make(chan bool) // 无实际用处，等完成退出
 
 /*******************context************************/
 type OrderContext struct {
@@ -44,9 +44,9 @@ func (o *OrderContext) Handle(op string) error {
 /**********************state 接口***************************/
 // abstract state
 type OrderStater interface {
-	Flow()
-	Handle(op string)
-	GetOperations() []string
+	Flow()                   // 状态流转
+	Handle(op string)        // 接受操作
+	GetOperations() []string // 获取当前状态可做的操作
 }
 
 /**********************state 具体实现***************************/

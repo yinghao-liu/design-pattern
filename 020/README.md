@@ -2,6 +2,20 @@
 
 状态模式（State Pattern）
 
+状态模式与[有限状态机](https://en.wikipedia.org/wiki/Finite-state_machine)的概念紧密相关。
+
+> 在状态模式中， 特定状态知道其他所有状态的存在， 且能触发从一个状态到另一个状态的转换； 策略则几乎完全不知道其他策略的存在。
+
+状态模式建议为对象的所有可能状态新建一个类， 然后将所有状态的对应行为抽取到这些类中。
+
+状态模式结构
+
+![statest](image/statest.png)
+
+
+
+
+
 仿照京东的订单系统，暂未考虑退货等行为，选取如下几种订单状态：
 
 - 待付款
@@ -35,10 +49,18 @@
 
 
 
-![](State.drawio.png)
+![](image/State.drawio.png)
 
 
 
 结构图
 
-![](statestruct.drawio.png)
+![](image/statestruct.drawio.png)
+
+
+
+
+
+## reference
+
+1. [状态模式](https://refactoringguru.cn/design-patterns/state)
