@@ -1,12 +1,33 @@
 package main
 
+// 集合接口
+type Collector interface {
+	GetIterator() Iterator
+	GetReverseIterator() Iterator
+}
+
+// 切片集合
+type CollectionSlice []int
+
+func (c *CollectionSlice) GetIterator() Iterator {
+	iter := new(orderIterator)
+	iter.Set(c)
+	return iter
+}
+func (c *CollectionSlice) GetReverseIterator() Iterator {
+	iter := new(reverseIterator)
+	iter.Set(c)
+	return iter
+}
+
+/***************************迭代器****************************/
 // 迭代器接口
 type Iterator interface {
 	GetNext() int
 	HasMore() bool
 }
 
-// 顺序遍历器
+// 顺序迭代器
 type orderIterator struct {
 	collection *CollectionSlice
 	index      int
@@ -28,7 +49,7 @@ func (iter orderIterator) HasMore() bool {
 	return false
 }
 
-// 逆序遍历器
+// 逆序迭代器
 type reverseIterator struct {
 	collection *CollectionSlice
 	index      int
