@@ -42,7 +42,7 @@
 
 ### 015 [解释器模式(Interpreter Pattern)]()
 
-### 016 [迭代器模式(Iterator Pattern)]()
+### 016 [迭代器模式(Iterator Pattern)](016)★★☆
 
 ### 017 [中介者模式(Mediator Pattern)]()
 
