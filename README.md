@@ -54,6 +54,6 @@
 
 ### 021 [策略模式(Strategy Pattern)](021)★★★
 
-### 022 [模板模式(Template Pattern)](022)★☆☆
+### 022 [模板模式(Template Pattern)](022)★★☆
 
 ### 023 [访问者模式(Visitor Pattern)](023)
